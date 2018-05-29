@@ -90,7 +90,7 @@ public class RunParticle : MonoBehaviour {
     
     		//初始化粒子数目和大小
 		pSys.maxParticles = 5000;
-    pSys.startSize = 0.05f;
+    		pSys.startSize = 0.05f;
 
     		//因为粒子的运动由代码实现，所以需要让关于粒子运动的属性无效
 		pSys.startSpeed = 0;            
