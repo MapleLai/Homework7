@@ -83,33 +83,33 @@ public class RunParticle : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-    //获取游戏对象的粒子系统
+    		//获取游戏对象的粒子系统
 		particles = new ParticleSystem.Particle[5000];  
 		particleProperty = new Particle[5000];  
 		pSys = this.GetComponent<ParticleSystem>();  
     
-    //初始化粒子数目和大小
+    		//初始化粒子数目和大小
 		pSys.maxParticles = 5000;
     pSys.startSize = 0.05f;
 
-    //因为粒子的运动由代码实现，所以需要让关于粒子运动的属性无效
+    		//因为粒子的运动由代码实现，所以需要让关于粒子运动的属性无效
 		pSys.startSpeed = 0;            
 		pSys.loop = false;    
     
-    //发射粒子
+    		//发射粒子
 		pSys.Emit(5000);  
 		pSys.GetParticles(particles);
 
-    //生成小行星带
+    		//生成小行星带
 		for (int i = 0; i < 5000; i++) 
 		{
-      //随机生成粒子的半径和水平倾斜角
+      			//随机生成粒子的半径和水平倾斜角
 			float minRadius = 2.0f * Random.Range(1.0f, 3.0f / 2.0f);  
 			float maxRadius = 4.0f * Random.Range(3.0f / 4.0f, 1.0f);  
 			float radius = Random.Range(minRadius, maxRadius);
 			float angle = Random.Range(0.0f, 360.0f);
 
-      //设置粒子的位置，让圆环沿Y轴方向微微倾斜，否则看到的是一条线
+      			//设置粒子的位置，让圆环沿Y轴方向微微倾斜，否则看到的是一条线
 			particleProperty [i] = new Particle (radius, angle, time);
 			particles [i].position = new Vector3 (particleProperty [i].radius * Mathf.Cos (particleProperty [i].angle / 180 * Mathf.PI), particleProperty [i].radius * Mathf.Sin (45 / 180 * Mathf.PI), particleProperty [i].radius * Mathf.Sin (particleProperty [i].angle / 180 * Mathf.PI));
 		}
