@@ -111,9 +111,7 @@ public class RunParticle : MonoBehaviour {
 
       //设置粒子的位置，让圆环沿Y轴方向微微倾斜，否则看到的是一条线
 			particleProperty [i] = new Particle (radius, angle, time);
-			particles [i].position = new Vector3 (particleProperty [i].radius * Mathf.Cos (particleProperty [i].angle / 180 * Mathf.PI), 
-																		particleProperty [i].radius * Mathf.Sin (45 / 180 * Mathf.PI),
-																		particleProperty [i].radius * Mathf.Sin (particleProperty [i].angle / 180 * Mathf.PI));
+			particles [i].position = new Vector3 (particleProperty [i].radius * Mathf.Cos (particleProperty [i].angle / 180 * Mathf.PI), 															particleProperty [i].radius * Mathf.Sin (45 / 180 * Mathf.PI),										particleProperty [i].radius * Mathf.Sin (particleProperty [i].angle / 180 * Mathf.PI));
 		}
 		pSys.SetParticles(particles, 5000); 
 
@@ -127,9 +125,7 @@ public class RunParticle : MonoBehaviour {
 			particleProperty[i].angle -= 10f; 
 			particleProperty[i].angle = particleProperty[i].angle % 360.0f;  
 
-			particles [i].position = new Vector3 (particleProperty [i].radius * Mathf.Cos (particleProperty [i].angle / 180 * Mathf.PI), 
-																		particleProperty [i].radius * Mathf.Sin (45 / 180 * Mathf.PI),
-																		particleProperty [i].radius * Mathf.Sin (particleProperty [i].angle / 180 * Mathf.PI)); 
+			particles [i].position = new Vector3 (particleProperty [i].radius * Mathf.Cos (particleProperty [i].angle / 180 * Mathf.PI), 															particleProperty [i].radius * Mathf.Sin (45 / 180 * Mathf.PI),															particleProperty [i].radius * Mathf.Sin (particleProperty [i].angle / 180 * Mathf.PI)); 
 		}  
 		pSys.SetParticles(particles, 5000);
 	}
